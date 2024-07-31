@@ -1,3 +1,151 @@
+/* overflow: visible for icon, img boundaries */
+/* fine-tuning spacing too early in process */
+/* scared to see desktop, but understand layers of flex direction */
+
+:root {
+    --font-text-title: "Fraunces", serif;
+    --font-text-body: "Montserrat", sans-serif;
+
+    --color-text-primary: hsl(158, 36%, 37%);
+    --color-text-primary-hover: hsl(158, 36%, 20%);
+    --color-text-title: hsl(212, 21%, 14%);
+    --color-text-body: hsl(228, 12%, 48%);
+
+    --color-background-card: hsl(0, 0%, 100%);
+    --color-background-page: hsl(30, 38%, 92%); 
+}
+
+/* LAYOUT */
+
 body {
-    background: red;
+    margin: 0px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background: var(--color-background-page);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    width: 345px;
+    height: 615px;
+    background: var(--color-background-card);
+    border-radius: 10px;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        background: pink;
+        align-items: center;
+    }
+
+    .card {
+        flex-direction: row;
+        width: 540px;
+        height: 410px;
+    }
+
+    img {
+        height: 100%;
+    }
+    
+
+}
+
+img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+p { line-height: 1.8; }
+
+h1 {
+    margin-top: 0.8rem;
+    margin-bottom: 1.0rem;
+    line-height: 1;
+}
+
+main { width: 295px; }
+
+.category {
+    margin-top: 1.0rem;
+    margin-bottom: 0.4rem;
+}
+
+.description {
+    margin-bottom: 1.2rem;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    margin-top: 0.4rem;
+}
+
+.price__full { margin-left: 1.3rem; }
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.8rem;
+    background: var(--color-text-primary);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: var(--color-text-primary-hover);
+}
+
+.cart-icon {
+    background-image: url("../images/icon-cart.svg");
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    margin-right: 0.7rem;
+}
+
+/* TYPOGRAPHY */
+
+p {
+    font-family: var(--font-text-body);
+    color: var(--color-text-body);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+h1 {
+    margin-top: 0;
+    font-family: var(--font-text-title);
+    color: var(--color-text-title);
+}
+
+.category {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 450;
+    letter-spacing: 0.3rem;
+}
+
+.price__sale {
+    color: var(--color-text-primary);
+    font-family: var(--font-text-title);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.price__full {
+    text-decoration: line-through;
+    font-family: var(--font-text-body);
+    color: var(--color-text-body);
+    font-size: 0.8rem;
+    font-weight: 500;   
+}
+
+.button p {
+    color: var(--color-background-card);
 }
