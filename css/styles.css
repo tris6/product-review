@@ -1,7 +1,3 @@
-/* overflow: visible for icon, img boundaries */
-/* fine-tuning spacing too early in process */
-/* scared to see desktop, but understand layers of flex direction */
-
 :root {
     --font-text-title: "Fraunces", serif;
     --font-text-body: "Montserrat", sans-serif;
@@ -36,25 +32,6 @@ body {
     border-radius: 10px;
 }
 
-@media screen and (min-width: 768px) {
-    body {
-        background: pink;
-        align-items: center;
-    }
-
-    .card {
-        flex-direction: row;
-        width: 540px;
-        height: 410px;
-    }
-
-    img {
-        height: 100%;
-    }
-    
-
-}
-
 img {
     width: 100%;
     border-radius: 10px 10px 0 0;
@@ -75,9 +52,7 @@ main { width: 295px; }
     margin-bottom: 0.4rem;
 }
 
-.description {
-    margin-bottom: 1.2rem;
-}
+.description { margin-bottom: 1.2rem; }
 
 .price {
     display: flex;
@@ -97,9 +72,7 @@ main { width: 295px; }
     cursor: pointer;
 }
 
-.button:hover {
-    background: var(--color-text-primary-hover);
-}
+.button:hover { background: var(--color-text-primary-hover); }
 
 .cart-icon {
     background-image: url("../images/icon-cart.svg");
@@ -107,6 +80,44 @@ main { width: 295px; }
     width: 16px;
     height: 16px;
     margin-right: 0.7rem;
+}
+
+@media screen and (min-width: 768px) {
+    body { align-items: center; }
+
+    .card {
+        flex-direction: row;
+        width: 600px;
+        height: 450px;
+    }
+
+    header {
+        height: 100%;
+        justify-self: start;
+    }
+
+    img {
+        height: 100%;
+        border-radius: 10px 0 0 10px;
+    }
+
+    main {
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main__content { width: 235px; }
+
+    .category {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    .description { margin-top: 1.3rem; }
+
+    .price { margin-bottom: 1.4rem; }
 }
 
 /* TYPOGRAPHY */
